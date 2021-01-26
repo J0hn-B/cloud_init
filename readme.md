@@ -17,8 +17,6 @@ It is supported across all major public cloud providers, provisioning systems fo
 
 Both vms will start with Rancher's K3s installed, as described in the scripts/cloud-init.sh
 
-ssh --> ssh adminuser@your_public_ip
-
 If you only need one line of code:
 
 > azure --> compute.tf line:30 --> custom_data = base64encode(file("../scripts/cloud-init.sh"))  
