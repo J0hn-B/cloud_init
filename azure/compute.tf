@@ -3,7 +3,7 @@
 #*------------------------------------------------
 
 resource "azurerm_network_interface" "k8s_multi" {
-  name                = "k3s-development-01-nic"
+  name                = var.network_interface_name
   location            = azurerm_resource_group.k8s_multi.location
   resource_group_name = azurerm_resource_group.k8s_multi.name
 
@@ -22,7 +22,7 @@ resource "azurerm_network_interface" "k8s_multi" {
 #*------------------------------------------------
 
 resource "azurerm_linux_virtual_machine" "k8s_multi_01" {
-  name                = "k3s-development-01"
+  name                = var.linux_virtual_machine_name
   resource_group_name = azurerm_resource_group.k8s_multi.name
   location            = azurerm_resource_group.k8s_multi.location
   size                = "Standard_B1ms"
@@ -33,7 +33,7 @@ resource "azurerm_linux_virtual_machine" "k8s_multi_01" {
   ]
 
   admin_ssh_key {
-    username   = "adminuser"
+    username   = var.linux_virtual_machine_username
     public_key = file("~/.ssh/id_rsa.pub")
   }
 

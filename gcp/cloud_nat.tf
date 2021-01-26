@@ -4,11 +4,11 @@ data "google_compute_network" "default" {
 
 data "google_compute_subnetwork" "default" {
   name   = "default"
-  region = "europe-west2"
+  region = var.gcp_region
 }
 
 resource "google_compute_router" "router" {
-  name    = "k3s-vm-nat-gateway"
+  name    = var.compute_router_name
   region  = data.google_compute_subnetwork.default.region
   network = data.google_compute_network.default.id
 
@@ -18,7 +18,7 @@ resource "google_compute_router" "router" {
 }
 
 resource "google_compute_router_nat" "nat" {
-  name                               = "k3s-vm-nat-router"
+  name                               = var.compute_router_nat_name
   router                             = google_compute_router.router.name
   region                             = google_compute_router.router.region
   nat_ip_allocate_option             = "AUTO_ONLY"

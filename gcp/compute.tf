@@ -3,7 +3,7 @@
 #*------------------------------------------------
 
 resource "google_compute_instance" "k8s_multi_01" {
-  name         = "k3s-development-01"
+  name         = var.compute_instance_name
   machine_type = "g1-small"
   zone         = "europe-west2-a"
 
