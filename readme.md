@@ -21,5 +21,5 @@ ssh --> ssh adminuser@your_public_ip
 
 If you only need one line of code:
 
-> azure >> compute.tf line:30 >> custom_data = base64encode(file("../scripts/cloud-init.sh"))  
-> gcp >> compute.tf line:25 >> metadata_startup_script = file("../scripts/cloud-init.sh")
+> azure --> compute.tf line:30 --> custom_data = base64encode(file("../scripts/cloud-init.sh"))  
+> gcp --> compute.tf line:25 --> metadata_startup_script = file("../scripts/cloud-init.sh")
