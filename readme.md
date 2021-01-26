@@ -5,7 +5,7 @@ in the first boot.
 Terraform is not an ideal tool for this job and if you try local or remote exec, you will find it slow.
 
 Cloud-init is the industry standard multi-distribution method for cross-platform cloud instance initialization.  
-It is supported across all major public cloud providers, provisioning systems for private cloud infrastructure, and bare-metal installations.
+It is supported across all major public cloud providers, provisioning systems for private cloud infrastructure, and bare-metal installations.  
 <https://cloudinit.readthedocs.io/en/latest/>
 
 ## How to
